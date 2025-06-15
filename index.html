@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sudoku Game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-container">
+        <i class="fas fa-th title-icon"></i>
+        <h1>Sudoku Master</h1>
+      </div>
+      <p class="subtitle">Challenge your mind with the classic number puzzle</p>
+    </header>
+
+    <div class="game-area">
+      <div class="board-container">
+        <div class="timer" id="timer">00:00</div>
+        <div class="sudoku-board" id="board"></div>
+
+        <div class="controls">
+          <button class="btn btn-primary" id="new-game"><i class="fas fa-plus-circle"></i> New Game</button>
+          <button class="btn btn-secondary" id="check-solution"><i class="fas fa-check"></i> Check Solution</button>
+          <button class="btn btn-warning" id="reset"><i class="fas fa-undo"></i> Reset</button>
+          <button class="btn btn-success" id="hint"><i class="fas fa-lightbulb"></i> Hint</button>
+        </div>
+
+        <div class="difficulty">
+          <button class="diff-btn active" data-diff="easy">Easy</button>
+          <button class="diff-btn" data-diff="medium">Medium</button>
+          <button class="diff-btn" data-diff="hard">Hard</button>
+        </div>
+
+        <div class="message" id="message"></div>
+      </div>
+
+      <div class="stats-container">
+        <h2 class="stats-title">Game Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="games-played">0</div>
+            <div class="stat-label">Games Played</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="games-solved">0</div>
+            <div class="stat-label">Games Solved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="best-time">00:00</div>
+            <div class="stat-label">Best Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="avg-time">00:00</div>
+            <div class="stat-label">Avg. Time</div>
+          </div>
+        </div>
+
+        <div class="timer" id="current-time">00:00</div>
+
+        <div class="controls">
+          <button class="btn btn-error" id="reset-stats"><i class="fas fa-trash-alt"></i> Reset Stats</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="reset-modal">
+    <div class="modal-content">
+      <h2>Reset Puzzle</h2>
+      <p>Are you sure you want to reset the current puzzle? All your progress will be lost.</p>
+      <div class="modal-buttons">
+        <button class="btn btn-secondary" id="cancel-reset">Cancel</button>
+        <button class="btn btn-error" id="confirm-reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Sudoku Master &copy; 2023 | Created with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
